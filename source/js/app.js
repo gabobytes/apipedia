@@ -1,13 +1,16 @@
 $(document).ready(function() {
   //function to get articles, receives url for ajax and typesearch
 function getArticles(urlGet,typeSearch){
+  //remove class hidden on gif loading div
+  $("#divLoading").removeClass('hidden');
   $.ajax({
       url:urlGet,
       type: 'GET',
       crossDomain: true,
       dataType: 'jsonp',
-      headers:{"Access-Control-Allow-Origin":"*"},
-      success: function(data){
+      headers:{"Access-Control-Allow-Origin":"*"}})
+  
+      .done( function(data){
       var html = "<div class='row labelResults'><strong>Results</strong><br/></div>";
       var resul = data.query[typeSearch];
        
@@ -34,10 +37,13 @@ function getArticles(urlGet,typeSearch){
       
       //print results on div
       $("#results").html(html);      
-    },
-    error: function() { alert("Can't stablish Wikipedia connection"); },
+    })
+    .fail(function() { alert("Can't stablish Wikipedia connection")})
+    .always(function(){
+      $("#divLoading").addClass('hidden');
+    }); 
     
-    });//end ajax
+    
  
 }//end GetArticles
 
