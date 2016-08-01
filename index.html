@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wikipedia Viewer</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="build/css/styles.css">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="build/js/app.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="row heading" align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Wikipedia-logo-en-big.png" class="img-responsive" width="100" >
+    <h3>Wikipedia Viewer</h3>    
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="inner-addon left-addon">
+      <i class="glyphicon glyphicon-search"></i>        
+      <input type="text" name="qsearch" id="qsearch" class="form-control" placeholder="search on wikipedia">
+        <p align="center">
+          <a href="#" id="lnkRandom">click here for random articles</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row" >    
+    <div class="col-md-12 results" id="results" >      
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>
